@@ -498,6 +498,7 @@
 # 9
 
 import numpy as np
+import matplotlib.pyplot as plt
 
 def dms2deg(dms):
     d = dms[0]
@@ -599,10 +600,9 @@ def GMST(jd):
     g = (g%360) / 15
     return g
 
-import matplotlib.pyplot as plt
-
 warsaw_lat: float = 52
 warsaw_lon: float = 21
+equator_lat: float = 0
 
 
 if __name__ == '__main__':
