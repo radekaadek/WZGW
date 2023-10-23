@@ -1,4 +1,5 @@
 
+
 # 1 Treść zadania
 # Celem ćwiczenia jest transformacja współrzędnych elipsoidalnych lecącego samolotu do układu
 # lokalnego. Danymi do zadania są współrzędne geodezyjne: szerokość φ oraz długość λ, a także

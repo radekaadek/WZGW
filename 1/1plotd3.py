@@ -1,9 +1,209 @@
-# Wstęp do astronomii geodezyjnej
-# Wybrane Zagadnienia Geodezji Wyższej
-# Maciej Grzymała
-# maciej.grzymala@pw.edu.pl
-# Wydział Geodezji i Kartografii, Politechnika Warszawska
-# Warszawa, 2023
+# Sfera niebieska
+# Sfera niebieska
+# Sfera niebieska jest to sfera o środku umieszczonym w
+# środku Ziemi i o nieskończenie wielkim jednostkowym
+# promieniu.
+# Przecięcie sfery płaszczyzną jest kołem:
+# kołem wielkim nazywamy przecięcie sfery
+# płaszczyzną przechodzącą przez środek sfery
+# linia prostopadła do płaszczyzny przechodząca
+# przez środek sfery przecina sferę w dwóch punktach
+# P i P’, które nazywamy biegunami
+# kołem małym nazywamy przecięcie sfery
+# płaszczyzną nie przechodzącą przez środek sfery
+# Astronomia Geodezyjna z Geodynamiką – wprowadzenie do przedmiotu 3/28
+# Trójkąt sferyczny
+# Bokiem trójkąta sferycznego nazywamy bądź
+# łuk koła wielkiego łączącego dwa wierzchołki
+# trójkąta, bądź kąt środkowy, na którym oparty
+# jest rozważany łuk koła wielkiego. Boki
+# wyrażone są najczęściej w mierze stopniowej
+# lub czasowej i oznaczone są małymi literami
+# a, b, c
+# Kątem trójkąta sferycznego nazywamy kąt
+# płaski pomiędzy stycznymi do boków trójkąta
+# w punkcie stanowiącym jego wierzchołek,
+# bądź kąt dwuścienny zawarty pomiędzy
+# płaszczyznami kół wielkich tworzących boki
+# trójkąta. Kąty w trójkącie sferycznym
+# oznaczamy wielkimi literami A, B, C.
+# Rozważane będą trójkąty o bokach i kątach
+# mniejszych od 180°.
+
+# Układ współrzędnych sferycznych
+# Zdefiniowanie jakiegoś przestrzennego
+# układu współrzędnych wymaga
+# zdefiniowania w przestrzeni
+# podstawowego kierunku (oś
+# biegunowa) i płaszczyzny
+# podstawowej, z wyróżnionym na niej
+# kierunkiem jednej z osi
+# współrzędnych (półpłaszczyzna
+# początkowa),
+# Położenie punktów na sferze
+# niebieskiej określać będą dwie
+# współrzędne sferyczne.
+# Astronomia Geodezyjna z Geodynamiką – wprowadzenie do przedmiotu 6/28
+# Układ współrzędnych horyzontalnych
+# Układ współrzędnych horyzontalnych (inaczej
+# topocentrycznych/układ lokalny)
+# płaszczyzną podstawową układu jest płaszczyzna
+# horyzontu
+# ós biegunowa: linia pionu (zenit–nadir)
+# Współrzędnymi sferycznymi tego układu są:
+# azymut (Az),
+# wysokość (h) lub odległość zenitalna (z). Pomiędzy
+# wysokością a odległością zenitalną zachodzi
+# następujący związek:
+# z = 90o − h
+# Współrzędne horyzontalne gwiazd ulegają ciągłym
+# zmianom wskutek ruchu obrotowego Ziemi i związanego
+# z tym pozornego ruchu dobowego sfery niebieskiej.
+
+# Układ współrzędnych równikowych ekwinokcjalnych
+# Układ współrzędnych równikowych:
+# płaszczyzną podstawową układu jest
+# płaszczyzna równika ziemskiego,
+# oś biegunowa: oś obrotu Ziemi (biegun
+# płn–biegun płd),
+# półpłaszczyzna początkowa: południk
+# punktu Barana (à).
+# Współrzędnymi sferycznymi tego układu są:
+# rektascenzja (α),
+# deklinacja (δ)
+# Astronomia Geodezyjna z Geodynamiką – wprowadzenie do przedmiotu 8/28
+# Układ współrzędnych równikowych ekwinokcjalnych
+# Rektascenzją (α) nazywamy kąt
+# dwuścienny zawarty pomiędzy
+# płaszczyznami południka punktu Barana
+# i południka danej gwiazdy. Rektascenzję
+# liczymy dodatnio w kierunku:
+# zachód–południe–wschód przeciwnie do
+# ruchu wskazówek zegara
+# Deklinacja (δ) nazywamy kąt zawarty
+# pomiędzy płaszczyzną równika
+# niebieskiego a kierunkiem do danej
+# gwiazdy, mierzony w płaszczyźnie
+# południka niebieskiego
+# Deklinację liczymy od 0°do 90°na półkuli
+# północnej i ujemnie na półkuli
+# południowej.
+
+# Punkt Barana, (à) punkt równonocy wiosennej (punkt Barana) – miejsce przecięcia
+# się ekliptyki z równikiem, gdzie Słońce zmienia deklinację z ujemnej na dodatnią
+
+# Układ współrzędnych równikowych godzinnych
+# Układ współrzędnych równikowych
+# godzinnych:
+# płaszczyzną podstawową układu jest
+# płaszczyzna równika ziemskiego
+# oś biegunowa: oś obrotu Ziemi (biegun
+# płn–biegun płd)
+# półpłaszczyzna początkowa: południowe
+# ramię południka miejscowego
+# Współrzędnymi sferycznymi tego układu są:
+# kąt godzinny (t),
+# deklinacja (δ)
+# Astronomia Geodezyjna z Geodynamiką – wprowadzenie do przedmiotu 12/28
+# Układ współrzędnych równikowych godzinnych
+# Kątem godzinnym (t) nazywamy kąt dwuścienny zawarty pomiędzy płaszczyznami
+# południka miejscowego i południka rozpatrywanej gwiazdy. Liczony dodatnio w kierunku:
+# zachód–północ–wschód, czyli zgodnie z ruchem wskazówek zegara
+# Kąt godzinny jako kąt liczony od płaszczyzny południka miejscowego jest współrzędną
+# lokalną, związaną z miejscem obserwacji
+# Związek między kątem godzinnym a rektascenzją:
+# t = α∗ + t∗
+# gdzie:
+# t – kąt godzinny punktu Barana,
+# t∗ – kąt godzinny danej gwiazdy,
+# α – rektascenzja danej gwiazdy.
+# Kąt godzinny punktu Barana t nazywany jest czasem gwiazdowym
+
+# Transformacja współrzędnych pomiędzy układem równikowym i horyzontalnym
+# Zamianę współrzędnych równikowych na
+# horyzontalne, przy znanej szerokości geograficznej
+# φ, podają wzory podstawowe rozpisane dla boku
+# GZ i kata przy zenicie w trójkącie paralaktycznym:
+# sin h = sin φ sin δ + cos φ cos δ cos t
+# sin z cos Az = sin δ cos φ − cos δ sin φ cos t
+# sin Az = − sin t cos δ
+# cos h
+
+# Zamianę odwrotną, czyli współrzędnych
+# horyzontalnych na równikowe, uzyskamy pisząc
+# wzory podstawowe dla boku PnG i kąta przy
+# biegunie paralaktycznym:
+# sin δ = sin φ sin h + cos φ cos h cos Az
+# cos δ cos t = cos φ sin h − sin φ cos h cos Az
+# sin t = − sin Az cos h
+# cos δ
+
+# Transformację współrzędnych pomiędzy ukłądem
+# równikowym i równikowym godzinnym realizują
+# związki:
+# α∗ = t − t∗
+# t∗ = t − α∗
+# Drugą współrzędną w obu układach jest
+# deklinacja (δ)
+
+# Ruch obrotowy Ziemi
+# kąt o jaki Ziemi zrobi obrót w ciągu jednej doby
+# słonecznej:
+# 360o + ( 1
+# 365, 2422 ) · 360o = 360o59′8”
+# Doba gwiazdowa = 23h 56m 04,091s czasu
+# słonecznego
+# Doba słoneczna = 24h 03m 56,555s czasu
+# gwiazdowego
+# opóźnienie początku doby słonecznej względem
+# doby gwiazdowej o 3m 56,555s czasu gwiazdowego
+# na dobę, czyli 3m 55,909s czasu słonecznego
+# Astronomia Geodezyjna z Geodynamiką – wprowadzenie do przedmiotu 18/28
+# Czas gwiazdowy
+# Podstawową jednostką skali czasu gwiazdowego jest doba gwiazdowa
+# Dobą gwiazdową nazywamy okres zawarty pomiędzy dwoma kolejnymi kulminacjami górnymi
+# punktu Barana. W zależności od wyboru kulminacji średniego lub prawdziwego punktu Barana,
+# rozróżniamy średnią i prawdziwą dobę gwiazdowa. Początkiem doby gwiazdowej jest moment
+# kulminacji górnej punktu Barana,
+# Z powodu precesji punktu Barana, doba gwiazdowa jest krótsza o 0, 0084s od rzeczywistego
+# pełnego obrotu Ziemi wokół osi.
+# CZAS GWIAZDOWY A REKTASCENZJA
+# Czas gwiazdowy jest to kąt godzinny punktu Barana:
+# S = t
+# Kąt godzinny punktu Barana można wyrazić wzorem:
+# t = t∗ + α∗
+# Dla gwiazd górujących t∗ = 0, czas gwiazdowy jest równy ich rektascenzji:
+# t = α∗
+
+# Wprowadzając czas gwiazdowy Greenwich SGr (λGr = 0) oraz czas słoneczny Greenwich T Gr
+# możemy dla Warszawy napisać:
+# SW −wa
+# m = SGr
+# m + λW −wa
+# T W −wa = T Gr + λW −wa
+# oraz
+# SW −wa
+# v = SGr
+# v + λW −wa
+# T W −wa
+# v = T Gr
+# v + λW −wa
+# ogólnie zaś:
+# SA = SGr + λA
+# T A = T Gr + λA
+
+# Przeliczenie pomiędzy czasem gwiazdowym a słonecznym
+# T A =
+# (
+# (SA − λA) − SGr)
+# k′ + λA
+# oraz:
+# SA =
+# (
+# T A − λA
+# )
+# k + SGr + λA
+
 # 1 Przypomnienie układów współrzędnych stosowanych w
 # astronomii
 # 1.1 Układ współrzędnych horyzontalnych
@@ -404,68 +604,31 @@ import matplotlib.pyplot as plt
 warsaw_lat: float = 52
 warsaw_lon: float = 21
 
-def star_height(jd):
-    gmst = GMST(jd)
-    # obliczamy LST uwzględniając długość geograficzna miejsca obserwacji;
-    lst = gmst + warsaw_lon/15
-    # Obliczenie kąta godzinnego, znając lokalny czas gwiazdowy oraz rektascenzję gwiazdy
-    # dla gwiazdy 48
-    re = [1,27,22.471]
-    ra = hms2rad(re)
-    h = lst - ra
-    # obliczamy wysokość
-    dec = [60,21,23.520]
-    dec = dms2rad(dec)
-    lat = np.deg2rad(warsaw_lat)
-    h = np.arcsin(np.sin(dec)*np.sin(lat)+np.cos(dec)*np.cos(lat)*np.cos(h))
-    return h
-
-def star_azimuth(jd):
-    gmst = GMST(jd)
-    # obliczamy LST uwzględniając długość geograficzna miejsca obserwacji;
-    lst = gmst + warsaw_lon/15
-    # Obliczenie kąta godzinnego, znając lokalny czas gwiazdowy oraz rektascenzję gwiazdy
-    # dla gwiazdy 699
-    re = [18,37,44.096]
-    ra = hms2rad(re)
-    h = lst - ra
-    # obliczamy wysokość
-    dec = [38,48,24.290]
-    dec = dms2rad(dec)
-    lat = np.deg2rad(warsaw_lat)
-    h = np.arcsin(np.sin(dec)*np.sin(lat)+np.cos(dec)*np.cos(lat)*np.cos(h))
-    # obliczamy azymut
-    az = np.arccos((np.sin(dec)-np.sin(h)*np.sin(lat))/(np.cos(h)*np.cos(lat)))
-    return az
-
-
 if __name__ == '__main__':
 
-    fig = plt.figure(figsize = (10,10))
-    ax = fig.add_subplot(projection = '3d')
-    # promie´n Ziemi
-    r = 1
-    # siatka wspołrz˛ednych
-    u, v = np.mgrid[0:(2 * np.pi+0.1):0.1, 0:np.pi:0.1]
-    x = np.cos(u) * np.sin(v)
-    y = np.sin(u) * np.sin(v)
-    z = np.cos(v)
-    z[z<0] = 0 # bez tego, narysowaliby´smy cał ˛a kul˛e, a chcemy tylko półkul˛e
-    ax.plot_surface(x,y,z, alpha = 0.1)
+    jd = julday(2023,7,1,0)
+    fig = plt.figure(figsize = (8,8))
+    ax = fig.add_subplot(polar = True)
+    ax.set_theta_zero_location('N') # ustawienie kierunku północy na górze wykresu
+    ax.set_theta_direction(-1)
     
+    ax.set_yticks(range(0, 90+10, 10)) # Define the yticks
     
-    # narysowanie punktu na sferze
-    for i in range(0,24):
+    yLabel = ['90', '', '', '60', '', '', '30', '', '', '']
+    ax.set_yticklabels(yLabel)
+    ax.set_rlim(0,90)
+    # dla gwiazdy 1
+    RA = [18, 37, 44.096]
+    DEC = [38, 48, 24.290]
+
+    for i in range(1,25):
         jd = julday(2023,7,1,i)
-        h = star_height(jd)
-        Az = star_azimuth(jd)
-        gx = r * np.sin(Az) * np.cos(h)
-        gy = r * np.cos(Az) * np.cos(h)
-        gz = r * np.sin(h)
-        # ax.plot3D(gx,gy,gz)
-        # make the points larger
-        ax.scatter(gx,gy,gz, s=25)
-        plt.pause(1)
+        GMST0 = GMST(jd)
+        LST = GMST0 + warsaw_lon/15
+        h = LST - hms2rad(RA)
+        Az = np.arctan2(np.sin(h), np.cos(h)*np.sin(warsaw_lat) - np.tan(dms2rad(DEC))*np.cos(warsaw_lat))
+        h = np.arcsin(np.sin(warsaw_lat)*np.sin(dms2rad(DEC)) + np.cos(warsaw_lat)*np.cos(dms2rad(DEC))*np.cos(h))
+        # print(hms2rad(RA), dms2rad(DEC), h, Az)
+        ax.scatter(Az, 90-np.rad2deg(h))
+
     plt.show()
-    
-    
