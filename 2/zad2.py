@@ -185,8 +185,6 @@
 # W danych intencjonalnie nie zostały wpisane destynacje lotów. Warto sprawdzić samemu,
 # jaki rejs się analizuje.
 # 3
-
-
 # -*- coding: utf-8 -*-
 """
 Created on Mon Oct 17 12:38:20 2022
@@ -334,4 +332,5 @@ for lot in os.listdir('loty'):
         folium.PolyLine(locations=[[last_coords[0], last_coords[1]], [lat, lon]], color=color).add_to(m)
         last_coords = [lat, lon]
 
-m.save('map.html')
+# show map
+m.render()
