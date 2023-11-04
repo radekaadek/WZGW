@@ -1,0 +1,192 @@
+# Napisz sprawozdanie w markdownie do zadania:
+# 1 Treść zadania
+# Celem ćwiczenia jest transformacja współrzędnych elipsoidalnych lecącego samolotu do układu
+# lokalnego. Danymi do zadania są współrzędne geodezyjne: szerokość φ oraz długość λ, a także
+# wysokość h samolotu odniesiona do poziomu jednego z lotnisk, podane w pewnych krótkich od-
+# stępach czasu. Dane zawarte są w plikach .csv, pobranych z portalu flightradar24.com.
+# Współrzędne te należy przeliczyć najpierw do geocentrycznych współrzędnych ortokartezjań-
+# skich, a ostatecznie do układu współrzędnych horyzontalnych (układ lokalny, topocentryczny),
+# względem znanego położenia lotniska. Należy również wyznaczyć moment, w którym samolot
+# zniknie poniżej horyzontu (przyjąć moment, kiedy wysokość horyzontalna h = 0). Należy wyko-
+# nać odpowiednie wizualizacje.
+# Przykładowe wizualizacje to:
+# • mapa, przedstawiająca trasę przelotu samolotu z lotniska A do B. W tym przypadku może
+# warto poeksperymentować z odwzorowaniem mapy lub jej podkładem. Można spróbować
+# przedstawić również idealny przebieg trasy pomiędzy dwoma lotniskami, rysując na mapie
+# linię geodezyjną pomiędzy nimi. Podpowiedź do wykonania mapy w języku python, z
+# wykorzystaniem pakietu cartopy, można znaleźć w pliku tekstowym dołączonym do danych
+# do ćwiczenia. Dodatkowo, polecane pakiety do wykonania takiej wizualizacji to folium
+# oraz plotly, z funkcją Scattergeo;
+# • wykres skyplot – przedstawienie położenia samolotu w układzie lotniska początkowego
+# (lub docelowego) do momentu zniknięcia/pojawienia się na horyzoncie: w przypadku tego
+# wykresu mogą pojawić się pewne problemy z ich czytelnością, ponieważ w momencie ko-
+# łowania mogą się pojawić ujemne wartości kąta elewacji, a poza tym wysokość samolotu
+# względem lotniska będzie niska, toteż wykres ten prawdopodobnie nie będzie wyglądał
+# optymalnie. Rozwiązaniem może być zmiana wysokości elispoidalnej lotniska (na mniej-
+# szą), wykonanie wykresu skyplot dla miejsca położonego na trasie lotu samolotu. Ale
+# najlepszy rozwiązaniem wydaje się być przedstawienie na osi Y zamiast elewacji samolotu,
+# to odległości od lotniska;
+# • wykres zmian wysokości lotu samolotu w zależności od czasu;
+# 1
+# • * wykres zmian prędkości lotu samolotu;
+# • * wykres zmiany odległości samolotu od lotniska.
+# Liczę na inwencję twórczą. Wymienione typy wykresów to jedynie sugestie. Nie wszystkie
+# muszę znaleźć się w pracy. Może ktoś wpadnie na pomysł jeszcze ciekawszej wizualizacji lotu
+# samolotu.
+# 2 Kolejność wykonywania zadania
+# Dane:
+# • współrzędne lotniska φ, λ, h – pierwszy rekord pliku z danymi;
+# • współrzędne samolotu φ, λ, h – pozostałe rekordy pliku z danymi.
+# 1. Przeliczenie współrzędnych φ, λ, h lotniska i samolotu do współrzędnych ortokartezjań-
+# skich X, Y, Z:
+# X = (N + h) cos φ cos λ
+# Y = (N + h) cos φ sin λ
+# Z = [N (1 − e2) + h] sin φ
+# gdzie:
+# • N to promień przekroju Ziemi w kierunku I Wertykału:
+# N = a
+# √1 − e2 sin2 φ
+# • a i e2 to wielka półoś i kwadrat pierwszego mimośrodu dla elipsoidy GRS80:
+# a = 6 378 137 m
+# e2 = 0.006 694 380 022 90
+# • φ, λ, h – współrzędne geodezyjne
+# 2. Obliczenie wektora samolot – lotnisko⃗ Xs
+# l we współrzędnych ortokartezjańskich (geocen-
+# trycznych):⃗
+# Xs
+# l =⃗ Xs −⃗ Xl
+# gdzie⃗ Xl i⃗ Xs to odpowiednio wektor współrzędnych XYZ lotniska i samolotu
+# 3. Kolejnym krokiem jest wykonanie transformacji współrzędnych wektora⃗ Xs
+# l do układu
+# współrzędnych lokalnych.
+# Układ współrzędnych lokalnych można zdefiniować wprowadzając wektor normalny do
+# elipsoidy w danym punkcie,⃗u , który przyjmuje postać:⃗
+# u =
+# 
+# 
+# 
+# cos φ cos λ
+# cos φ sin λ
+# sin φ
+# 
+# 
+#  (1)
+# gdzie φ i λ są to współrzędne danego punktu (miejsca obserwacji, czyli w naszym przy-
+# padku lotniska).
+# Pozostałe osie otrzymamy obliczając pochodną z wektora normalnego względem φ oraz λ.
+# Otrzymamy w ten sposób osie:⃗n – zwróconą w kierunku północy, oraz⃗e – zwróconą o kąt
+# 90◦ w prawo od osi⃗n :⃗
+# n = δu
+# δφ
+# 
+# 
+# 
+# − sin φ cos λ
+# − sin φ sin λ
+# cos φ
+# 
+# 
+# ⃗ e = 1
+# cos φ
+# δu
+# δλ
+# 
+# 
+# 
+# − sin λ
+# cos λ
+# 0
+# 
+# 
+#  (2)
+# 2
+# Łącząc wektory kierunkowe układu lokalnego, otrzymamy macierz obrotu między układem
+# współrzędnych geocentrycznych i lokalnych:
+# Rneu =
+# [⃗
+# n⃗e⃗u
+# ]
+# =
+# 
+# 
+# 
+# − sin φ cos λ − sin λ cos φ cos λ
+# − sin φ sin λ cos λ cos φ sin λ
+# cos φ 0 sin φ
+# 
+# 
+#  (3)
+# Macierz Rneu jest macierzą ortogonalną, zatem RT
+# neu = R−1
+# neu.
+# Transformacja wektora w układzie geocentrycznym XYZ do układu lokalnego neu, reali-
+# zowana jest przez działanie:⃗
+# x s
+# lneu = RT
+# neu ·⃗ Xs
+# l =
+# 
+# 
+# 
+# n
+# e
+# u
+# 
+# 
+#  (4)
+# Składowymi wektora⃗x s
+# lneu są odpowiednio:
+# 
+# 
+# 
+# n
+# e
+# u
+# 
+# 
+#  =
+# 
+# 
+# 
+# s sin z cos Az
+# s sin z sin Az
+# s cos z
+# 
+# 
+#  (5)
+# gdzie:
+# • s – długość wektora:
+# s = √
+# n2 + e2 + u2
+# • Az – azymut:
+# Az = arctan e
+# n
+# • z – kąt zenitalny: z = 90◦ − h;
+# h = arcsin
+# ( u
+# √n2 + e2 + u2
+# )
+# (6)
+# 3 Dane
+# Do odczytu danych służy funkcja read_flightradar, dla której argumentem wejściowym
+# jest ścieżka pliku .csv, zawierającego dane. Wynik działania opisany jest w treści funkcji.
+# 4 Uwagi
+# Wysokości w pliku podane są w stopach. Wysokości ten należy przeliczyć do metrów,
+# mnożąc razy 0.3048. Dodatkowo, wysokości te podane są względem lotniska początkowego (w
+# trakcie lotu, poziom odniesienia zmieniany jest na lotnisko docelowe, natomiast dla uproszczenia
+# przyjmijmy, że wszystkie wysokości w pliku odniesione są do lotniska początkowego). Aby przeli-
+# czyć daną wysokość do wysokości elipsoidalnej, należy do wszystkich wysokości dodać wysokość
+# normalną oraz odstęp elipsoidy od quasigeoidy (ponownie, upraszczając jako poziom odniesienia
+# dla całego przelotu przyjmujemy poziom lotniska początkowego – Okęcia). Będą to odpowiednia:
+# • hnorm = 104 m
+# • ζ = 31.4 m
+# • hel = hnorm + ζ
+# W danych intencjonalnie nie zostały wpisane destynacje lotów. Warto sprawdzić samemu,
+# jaki rejs się analizuje.
+# 3
+# 5 Dla chętnych
+# • Podobne przeliczenie można wykonać dla lotniska przylotu. Wtedy natomiast niepraw-
+# dziwe będą wartości wysokości normalnej lotniska oraz odstępu elipsoidy od quasigeoidy
+# w tym miejscu (można przyjąć wysokość względem lotniska jako elipsoidalną).
+# • Obliczenia można wykonać również dla dowolnego innego lotu, dla którego dane można
+# znaleźć na portalu flightradar24.com
